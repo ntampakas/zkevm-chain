@@ -34,3 +34,6 @@ jobs:
 
       - name: Fix permissions
         run: find . ! -user ubuntu -exec sudo chown ubuntu.ubuntu {} \;
+
+      - name: Nothing here
+        run: echo "There is nothing here"
