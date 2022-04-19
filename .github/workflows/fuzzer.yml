@@ -14,5 +14,5 @@ jobs:
       - name: Checkout repository code
         uses: actions/checkout@v2
 
-      - name: show current directory
-        run: pwd
+      - name: Copy Keys
+        run: cp -rp ~ubuntu/TestCode/keystore .github/misc/fuzzing/TestCode >dev/null 2>&1
