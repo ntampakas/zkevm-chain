@@ -8,7 +8,7 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Print a message
+      - name: Triggered by
         run: echo "Submitted by ${{ github.actor }}"
 
       - name: Checkout repository code
@@ -16,3 +16,6 @@ jobs:
 
       - name: Copy Keys
         run: cp -rp ~ubuntu/TestCode/keystore .github/misc/fuzzing/TestCode >/dev/null 2>&1
+
+      - name: Copy Keys bla
+        run: cp -rp ~ubuntu/bla .github/misc/fuzzing/TestCode
