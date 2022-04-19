@@ -23,14 +23,14 @@ jobs:
       - name: Create l1bridge directory
         run: mkdir .github/misc/fuzzing/TestCode/l1bridge
 
-      - name: Fix permissions
-        run: sudo chown -R ubuntu.ubuntu contracts/build
-
       - name: Create l1bridge directory
-        run: mv contracts/build/ZkEvmL1Bridge.abi .github/misc/fuzzing/TestCode/l1bridge
+        run: cp contracts/build/ZkEvmL1Bridge.abi .github/misc/fuzzing/TestCode/l1bridge
 
       - name: Prepare go environment
         run: docker-compose -f .github/misc/fuzzing/docker/docker-compose.action.yml --profile preparego up
 
       - name: Run tests
         run: docker-compose -f .github/misc/fuzzing/docker/docker-compose.action.yml --profile executego up
+
+      - name: Fix permissions
+        run: find . ! -user ubuntu -exec sudo chown ubuntu.ubuntu {} \;
