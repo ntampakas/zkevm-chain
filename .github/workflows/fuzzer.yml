@@ -8,7 +8,7 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Triggered by
+      - name: Job submitted by
         run: echo "Submitted by ${{ github.actor }}"
 
       - name: Checkout repository code
@@ -23,7 +23,7 @@ jobs:
       - name: Create l1bridge directory
         run: mkdir .github/misc/fuzzing/TestCode/l1bridge
 
-      - name: Create l1bridge directory
+      - name: Copy abi
         run: cp contracts/build/ZkEvmL1Bridge.abi .github/misc/fuzzing/TestCode/l1bridge
 
       - name: Prepare go environment
