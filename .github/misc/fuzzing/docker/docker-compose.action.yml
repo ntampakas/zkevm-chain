@@ -1,0 +1,38 @@
+services:
+
+  preparego:
+    container_name: preparego
+    image: preparego:latest  
+    profiles:
+      - preparego
+    build:
+      context: .
+      target: preparego
+    working_dir: /TestCode
+    volumes:
+      - "/home/ubuntu/actions-runner/_work/zkevm-chain/zkevm-chain/.github/misc/fuzzing/TestCode/:/TestCode"
+    #entrypoint: "go run . false false 1"
+
+  exec1a:
+    container_name: exec1a
+    image: golang:1.18
+    profiles:
+      - executego
+    build:
+      context: .
+    working_dir: /TestCode
+    volumes:
+      - "/home/ubuntu/actions-runner/_work/zkevm-chain/zkevm-chain/.github/misc/fuzzing/TestCode/:/TestCode"
+    entrypoint: "go run . false false 1"
+
+  exec1b:
+    container_name: exec1b
+    image: golang:1.18
+    profiles:
+      - executego
+    build:
+      context: .
+    working_dir: /TestCode
+    volumes:
+      - "/home/ubuntu/actions-runner/_work/zkevm-chain/zkevm-chain/.github/misc/fuzzing/TestCode/:/TestCode"
+    entrypoint: "go run . true false 1"
