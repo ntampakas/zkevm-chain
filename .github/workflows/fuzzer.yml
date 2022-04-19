@@ -1,0 +1,15 @@
+name: Trigger fuzzing CI
+on:
+  push:
+    branches: [ testing_framework ]
+
+jobs:
+  Exec-fuzzer:
+    runs-on: self-hosted
+
+    steps:
+      - name: Print a message
+        run: echo "Submitted by ${{ github.actor }}"
+
+      - name: Checkout repository code
+        uses: actions/checkout@v2
