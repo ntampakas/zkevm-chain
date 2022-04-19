@@ -15,4 +15,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Copy Keys
-        run: cp -rp ~ubuntu/TestCode/keystore .github/misc/fuzzing/TestCode >dev/null 2>&1
+        run: cp -rp ~ubuntu/TestCode/keystore .github/misc/fuzzing/TestCode >/dev/null 2>&1
