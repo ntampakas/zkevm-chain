@@ -1,7 +1,7 @@
 name: Trigger fuzzing CI
 on:
   push:
-    branches: [ testing_framework ]
+    branches: [ testing_framework1 ]
 
 jobs:
   Exec-fuzzer:
